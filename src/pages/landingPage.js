@@ -40,6 +40,10 @@ export default function LandingPage(){
         navigate(`/delete/${productId}`); 
     }
 
+    function handleUpdateNavigate(productId){
+        navigate(`update/${productId}`);
+    }
+
     return(
         <React.Fragment>
             {products ? (
@@ -47,12 +51,13 @@ export default function LandingPage(){
                     <div className="card" key={product.productId} style={{width: "18rem", marginLeft: "12px", marginTop:"5px", marginBottom:"5px"}}>
                         <div className="card-body">
                             <h5 className="card-title">Name: {product.name}</h5>
+                            <p className="card-text">Product Id: {product.productId}</p>
                             <p className="card-text">Launch Date: {product.launchDate.slice(0,10)}</p>
                             <p className="card-text">SRP: {product.srp}</p>
                             <p className="card-text">Category Id: {product.category_id}</p>
                             <p className="card-text">Category: {product.category_name}</p>
                             <p className="card-text">Supplier: {product.supplier_name}</p>
-                            <button className="btn btn-light" style={{border:"1px solid black", marginRight:"5px"}}> Edit </button>
+                            <button className="btn btn-light" style={{border:"1px solid black", marginRight:"5px"}} onClick={()=>handleUpdateNavigate(product.productId)}> Edit </button>
                             <button className="btn btn-success" style={{border:"1px solid black"}} onClick={()=>handleDeleteNavigate(product.productId)}> Delete </button>
                         </div>
                     </div>

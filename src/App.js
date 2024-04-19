@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./pages/landingPage";
 import AddProduct from "./pages/AddProduct";
 import DeleteProduct from "./pages/DeleteProduct";
+import UpdateProduct from "./pages/UpdateProduct";
 
 // context
 import ProductsContextData from "./context/ProductContext";
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/add" element={<AddProduct />} />
           <Route path="/delete/:productId" element={<DeleteProduct />} />
+          <Route path="/update/:productId" element={<UpdateProduct />} />
         </Routes>
       </ProductsContextData>
     </Router>
